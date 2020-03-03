@@ -1,0 +1,13 @@
+Exit Status /Return Code
+- Every command returns an exit Status
+- Range from 0 to 255
+- 0 = success
+- Other than 0 = error condition
+- Use for error checking
+- use man or info to find meaning of exit status
+
+Checking the Exit Status
+- $? contains the return code of the previously executed command.
+
+ls /not/here
+echo "$?"
