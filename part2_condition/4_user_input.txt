@@ -1,0 +1,8 @@
+The read command accepts STDIN.
+
+syntax:
+    read -p "PROMPT" VARTIABLE
+
+example
+    read -p "Enter your name" NAME
+    echo "Hello yourname is : ${NAME}

@@ -1,0 +1,3 @@
+tar -cvf mypackage.tar ./yourdir
+
+tar -xvf mypackage.tar
