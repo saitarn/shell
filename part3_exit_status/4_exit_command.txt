@@ -1,0 +1,8 @@
+Explicity define the return code
+- exit 0
+- exit 1
+- exit 2
+- exit 255
+- etc 
+
+The default value is that of the last command executed.

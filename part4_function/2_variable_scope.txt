@@ -1,0 +1,27 @@
+# Variable Scope
+
+- By default, variables are global
+- Variable have to bedefined before used
+
+#======= code block example 1 ===================
+GLOBAL_VAR=1 
+#   GLOBAL_VAR is available
+#   in the function.
+my_function
+#================================================
+
+#======= code block example 2 ===================
+#   GLOBAL_VAR is  NOT available
+#   in the function.
+my_function
+GLOBAL_VAR=1
+#================================================
+run ex4_global_variable.sh
+
+
+# Local variables
+- Can only be accessed within the function.
+- Cerate using the "local" keyword.
+ -- local LoCAL_VAR=1
+- Only functions can have local variables.
+- Best practice to keep variables local in functions

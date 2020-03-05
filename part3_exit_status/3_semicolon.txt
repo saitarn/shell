@@ -1,0 +1,9 @@
+The semicolon
+
+- Separate commands with a semicolon to ensure they all get executed.
+
+[ Example ]
+cp test.txt /tmp/bak/ ; cp test.txt /tmp
+# Same as :
+cp test.txt /tmp/bak/
+cp test.txt /tmp

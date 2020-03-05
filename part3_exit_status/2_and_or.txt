@@ -1,0 +1,7 @@
+$$ and ||
+
+&& = and
+mkdir /tmp/bak && cp test.txt /tmp/bak/
+
+|| = OR
+cp test.txt /tmp/bak/ || cp test.txt /tmp

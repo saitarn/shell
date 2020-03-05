@@ -1,8 +1,0 @@
-Positional Parameters
-
-$ bash my_script.sh parameter1 parameter2 parameter3
-
-    $0:"script.sh"
-    $1:"parameter1"
-    $2:"parameter2"
-    $3:"parameter3"

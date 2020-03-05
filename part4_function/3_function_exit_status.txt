@@ -1,0 +1,60 @@
+# Exit Status (Return Codes) of Function
+
+- Functions have an exit Status
+- Explicity (ระบุเองอย่างชัดเจน)
+ -- return <RETURN_CODE>
+
+- Implicity (โดย Default ถ้าไม่ระบุ return code ก็จะใช้ exit status ของ command สุดท้าย)
+ -- The exit status of the last command executed in the function
+
+- Valid exits codes range from 0 to 255
+- 0 = Success
+- $? = the exit status
+
+
+######### Code Example 1 #########
+function backup_file() {
+    if [ -f $1 ]
+    then
+        BACK="/tmp/$(basename ${1}).$(date +%F).$$"
+        echo "Backing up $1 to ${BACK}"
+        cp $1 $BACK
+    else
+        # The file does not exits.
+        return 1
+    fi
+}
+
+backup_file /etc/hosts
+if [ $? -eq 0 ]
+then
+    echo "Backup Successed!!!"
+fi
+
+##################################
+
+######### Code Example 2 #########
+function backup_file() {
+    if [ -f $1 ]
+    then
+        BACK="/tmp/$(basename ${1}).$(date +%F).$$"
+        echo "Backing up $1 to ${BACK}"
+        cp $1 $BACK
+    else
+        # The file does not exits.
+        return 1
+    fi
+}
+
+backup_file /etc/hosts
+if [ $? -eq 0 ]
+then
+    echo "Backup Successed!!!"
+else
+    echo "Backup Failed!"
+    # About the script and return a non-zero exit status.
+    exit 1
+fi
+
+##################################
+
