@@ -1,0 +1,51 @@
+# Hbase CRUD Operation
+
+
+Create : Add ad new value to the table
+Read : Read the value for a specific rowid , col id
+Update : update the value for a specific row id, col id
+Delete :  Delete the value for a specific row id , col id
+
+Ex1. Create table
+
+# create table to hold nofifications data
+> create 'notifacations', 'attributes', 'metrics'
+'notifacations' = name of the table
+'attributes', 'metrics' = Column families
+Column families are groups of columns which are ususlly semantically related
+
+
+Ex2. Insert data
+> put 'notifacations', 2, 'attributes:for_user', 'Chaz'
+
+2 = row id (key)
+attributes:for_user = name of column
+Chaz = Value of attributes:for_user that you want to Insert
+
+> put 'notifacations', 2, 'attributes:type', 'Comment'
+
+Ex3. Update data ==> use same command from Ex2 (put)
+The put operation has 2 purposes:
+-- Inserting values for new keys(row id , column)
+-- Updateing the value for exiting keys
+
+# insert new column
+> put 'notifacations', 2 ,'metrics:open', 0
+
+# updatea data
+> put 'notifacations', 2 ,'metrics:open', 1
+
+
+Ex4 Retrieve data
+> get 'notifacations', 2
+
+> get 'notifacations', 2 ,'metrics:open'
+> get 'notifacations', 2 ,'metrics:open', 'attributes:type'
+
+Ex4 Retirive Range of row id
+> scan 'notifacations'  # return all values from the table == select * 
+
+> scan 'notifacations' , {COLUMNS => ['attributes:type'], LIMIT => 1 STARTROW => "2"}
+
+> scan 'notifacations' , {COLUMNS => ['attributes:type'], LIMIT => 1 STARTROW => "2"}
+> scan 'notifacations' , {COLUMNS => ['attributes:type'], LIMIT => 1 STARTROW => "2", STOPROW => "4"}

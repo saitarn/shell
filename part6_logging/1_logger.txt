@@ -1,0 +1,12 @@
+# Logging with logger
+
+- The logger utility
+- By default creates user.notice messages.
+
+e.g.
+logger "Message"
+logger -p local0.info "Message"
+logger -t myscript -p local0.info "Messages"
+logger -i -t myscript "Messages"
+
+$ logger "Message"

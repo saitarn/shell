@@ -1,0 +1,52 @@
+Wildcards
+
+- Acharacter or string used for pattern matching.
+- Globbing expands the wildcard pattern into a list of files and /or directories. (paths)
+- Wildcards can be used with most commands.
+ -- list
+ -- rm
+ -- cp
+ -- etc..
+
+ Example
+
+ - * - matches zero or more characters.
+   -- *.txt
+   -- a*
+   -- a*.txt
+- ? matches exacly one character.
+  -- ?.txt
+  -- a?
+  -- a?.txt
+
+- [] - A charactoer class.
+  -- Matches any of the charactoers included between the brackets. Matches exacly one character.
+  -- [aeiou]
+  -- ca[nt]*
+    --- can
+    --- cat
+    --- candy
+    --- catch
+
+- [!] - Match any of thecharacter NOT included between the brackets. Matches exactly one character
+  -- [!aeiou]*
+    --- baseball
+    --- cricket
+    --- any word that not included [aeiou] in first character(position)
+
+Wildcards - Ranges
+- Use two charactoers separated by a hyphen to create a range in acharacter class.
+- [a-g]*
+  -- Matches all files that start with a,b,c,d,e,f, or g.
+- [3-6]*
+  -- Matches all files that start with 3,4,5 or 6
+
+  Named Character classes
+  - [[:alpha:]]
+  - [[:alnum:]]
+  - [[:digit:]]
+  - [[:lower:]]
+  - [[:space:]]
+  - [[:upper:]]
+
+
