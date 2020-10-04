@@ -1,4 +1,8 @@
 #!bin/bash
+# run this file by 2 argument
+# eg > date_between 2020-10-02 2020-20-07
+# example loop date in  [ 2020-10-02 2020-20-07 ]
+
 if [[ $1 =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]
   then
     echo "Date $1 is valid format (YYYY-MM-DD)"

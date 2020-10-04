@@ -3,3 +3,6 @@ $ date +%F
 
 $(date +%r)
 11:10:28 PM
+
+NOW=$(date +"%m-%d-%Y")
+echo $NOW
