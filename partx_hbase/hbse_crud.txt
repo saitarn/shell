@@ -45,7 +45,8 @@ Ex4 Retrieve data
 Ex4 Retirive Range of row id
 > scan 'notifacations'  # return all values from the table == select * 
 
-> scan 'notifacations' , {COLUMNS => ['attributes:type'], LIMIT => 1 STARTROW => "2"}
+> scan 'notifacations' , {COLUMNS => ['attributes:type'], LIMIT => 1 STARTROW =ls
+> "2"}
 
 > scan 'notifacations' , {COLUMNS => ['attributes:type'], LIMIT => 1 STARTROW => "2"}
 > scan 'notifacations' , {COLUMNS => ['attributes:type'], LIMIT => 1 STARTROW => "2", STOPROW => "4"}
