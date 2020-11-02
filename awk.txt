@@ -1,0 +1,2 @@
+remove first 2 charactor in file (every line)
+awk '{print substr($0,2)}' apparal_out.txt > apparal_out_remove.txt
